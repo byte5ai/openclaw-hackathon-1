@@ -246,25 +246,48 @@ byte5-news-remix/
 ---
 
 <!-- _class: phase phase-3 -->
-<!-- _header: 'Phase 2 — Entry: Umsetzung' -->
+<!-- _header: 'Phase 2 — Entry: Schritt 1' -->
 
 <div class="phase-bar"></div>
 
-## Von Zero zum personalisierten Issue
+## Entry · Schritt 1 <span class="b5-colon">:</span> Onboarding starten
 
-**Via OpenClaw-Chat — Personalization Gate:**
+**Dein Prompt:**
 
-> „Starte das non-annoying-news-Onboarding. Topics: AI-Agents, OpenClaw, Web-Standards. Quelle: hnrss.org/frontpage. Cadence: wöchentlich. Design: byte5-Magenta, Days One."
+> „Starte das non-annoying-news-Onboarding für mich."
 
-Der Skill führt durch sein Onboarding, persistiert die Antworten lokal, rendert das erste Issue.
+**Im Hintergrund:**
 
-**Via Code-Eingaben:**
+- Skill lädt `references/onboarding.md`
+- Personalization Gate öffnet das Interview
+- Agent fragt durch: Titel · Sprache · Reader-Promise · Topics · Quellen · Cadence · Design
 
-`references/onboarding.md` + `config-schema.md` von non-annoying-news lesen → `config.json` am vom Skill genannten Pfad hand-bauen → `onboarding.complete=true` → `/new`.
+> Nichts persistiert, bis du jede Antwort *bestätigst*.
 
-→ Referenz im Repo: [`demos/entry/byte5-news-remix`](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/entry/byte5-news-remix)
+<small>*[non-annoying-news SKILL.md](https://github.com/iret77/non-annoying-news/blob/main/SKILL.md) — Personalization Gate*</small>
 
-<small>*Quelle: [non-annoying-news SKILL.md](https://github.com/iret77/non-annoying-news/blob/main/SKILL.md) — Personalization Gate + references*</small>
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Entry: Schritt 2' -->
+
+<div class="phase-bar"></div>
+
+## Entry · Schritt 2 <span class="b5-colon">:</span> Antworten + Render
+
+**Du gibst die Antworten — z. B.:**
+
+> „Topics: AI-Agents, OpenClaw, Web-Standards. Quelle: hnrss.org/frontpage. Cadence wöchentlich. Design: byte5-Magenta, Days One."
+
+**Im Hintergrund:**
+
+- Antworten landen in einer lokalen Config *außerhalb* des Skill-Ordners
+- `onboarding.complete = true` schaltet die Gate frei
+- Trigger „Render das erste Issue" → HTML zuerst, dann PDF, PNG-Previews vor Auslieferung
+
+→ Referenz: [`demos/entry/byte5-news-remix`](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/entry/byte5-news-remix)
+
+<small>*[non-annoying-news SKILL.md](https://github.com/iret77/non-annoying-news/blob/main/SKILL.md)*</small>
 
 ---
 
@@ -312,25 +335,68 @@ rss-zu-wochenbrief/
 ---
 
 <!-- _class: phase phase-3 -->
-<!-- _header: 'Phase 2 — Intermediate: Umsetzung' -->
+<!-- _header: 'Phase 2 — Intermediate: Schritt 1' -->
 
 <div class="phase-bar"></div>
 
-## Von Zero zum eigenen Skill
+## Intermediate · Schritt 1 <span class="b5-colon">:</span> Skelett anfordern
 
-**Via OpenClaw-Chat:**
+**Dein Prompt:**
 
-> „Bau einen Skill `rss-zu-wochenbrief` in `~/.openclaw/workspace/skills/`. Pattern: `SKILL.md` mit Frontmatter + Workflow, 1 Reference (Editorial-Stil), 1 Python-Script (stdlib, parsed RSS/Atom), 1 Markdown-Template."
+> „Bau einen Skill `rss-zu-wochenbrief` in `~/.openclaw/workspace/skills/`. Trigger: Nutzer gibt RSS-URL und will einen 5-Bullet-Wochenbrief im Markdown."
 
-Agent schreibt die vier Dateien direkt. `/new`, dann mit RSS-URL triggern.
+**Im Hintergrund:**
 
-**Via Code-Eingaben:**
+- Agent legt den Folder `~/.openclaw/workspace/skills/rss-zu-wochenbrief/` an
+- Schreibt `SKILL.md` mit Frontmatter (`name`, `description`) + Workflow-Schritten
+- Fragt nach Details: welche Felder pro Feed-Item? Bullet-Stil?
 
-`mkdir -p ~/.openclaw/workspace/skills/rss-zu-wochenbrief/{references,scripts,assets}` → vier Dateien nach AgentSkills-Spec hand-schreiben → `/new`.
+<small>*[docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) — Skill-Anatomy + Frontmatter*</small>
 
-→ Referenz im Repo: [`demos/intermediate/rss-zu-wochenbrief`](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/intermediate/rss-zu-wochenbrief)
+---
 
-<small>*Quellen: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) · [agentskills.io](https://agentskills.io)*</small>
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Intermediate: Schritt 2' -->
+
+<div class="phase-bar"></div>
+
+## Intermediate · Schritt 2 <span class="b5-colon">:</span> Stil + Script
+
+**Dein Prompt:**
+
+> „Stil-Regeln in `references/editorial-style.md`: Was · Quelle · Datum · 8–25 Wörter · keine Hype-Wörter. Und `scripts/fetch_rss.py` als Python-Stdlib, parsed RSS und Atom."
+
+**Im Hintergrund:**
+
+- `references/editorial-style.md` wird geschrieben — der Workflow-Schritt aus SKILL.md lädt sie *bei Bedarf*
+- `scripts/fetch_rss.py` mit `urllib.request` + `xml.etree.ElementTree` — kein `pip install` nötig
+
+→ Referenz: [Demo-Folder im Repo](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/intermediate/rss-zu-wochenbrief)
+
+<small>*[agentskills.io](https://agentskills.io) · [docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills) — lazy-loaded references*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Intermediate: Schritt 3' -->
+
+<div class="phase-bar"></div>
+
+## Intermediate · Schritt 3 <span class="b5-colon">:</span> Template + erstes Issue
+
+**Dein Prompt:**
+
+> „`assets/template.md` mit Platzhaltern für 5 Bullets + Header. Dann `/new`. Wochenbrief aus `https://hnrss.org/frontpage`."
+
+**Im Hintergrund:**
+
+1. Template-Datei wird geschrieben — vier Schichten jetzt komplett
+2. `/new` lädt frische Session — Skill erscheint im System-Prompt
+3. Agent ruft `fetch_rss.py` auf · wählt 5 Items · schreibt Bullets nach Stil-Regeln · füllt Template
+
+> Skill lebt jetzt im Workspace · jede neue Session sieht ihn.
+
+<small>*[docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills) — Skills-Loading + Token-Impact*</small>
 
 ---
 
@@ -376,25 +442,70 @@ daily-briefing/
 ---
 
 <!-- _class: phase phase-3 -->
-<!-- _header: 'Phase 2 — Expert: Umsetzung' -->
+<!-- _header: 'Phase 2 — Expert: Schritt 1' -->
 
 <div class="phase-bar"></div>
 
-## Von Zero zum Composer
+## Expert · Schritt 1 <span class="b5-colon">:</span> Composer-Skelett
 
-**Voraussetzung:** `rss-zu-wochenbrief` schon im Workspace.
+**Voraussetzung:** `rss-zu-wochenbrief` schon im Workspace (Intermediate-Demo).
 
-**Via OpenClaw-Chat:**
+**Dein Prompt:**
 
-> „Bau einen Composer `daily-briefing`. Pipeline: RSS-URL → rss-zu-wochenbrief → QA-Gate (Python) → non-annoying-news. Validator prüft 5 Bullets, Quellen vorhanden, 8–25 Wörter, keine Hype-Wörter."
+> „Bau einen Composer `daily-briefing` in meinem Workspace. Pipeline: RSS-URL → rss-zu-wochenbrief → QA-Gate → non-annoying-news. Trigger: 'Daily Briefing aus &lt;URL&gt;'."
 
-**Via Code-Eingaben:**
+**Im Hintergrund:**
 
-Folder mit den 4 AgentSkill-Schichten anlegen → `SKILL.md` mit 3-Step-Workflow → `scripts/qa_check.py` mit Bullet-/Quellen-/Hype-Checks → `/new`.
+- Agent legt Skill-Folder + `SKILL.md` an
+- Workflow-Body: 3 Steps mit *„rufe Skill X auf"* — keine Re-Implementierung
+- Agent fragt nach Details: welche Regeln soll das QA-Gate prüfen?
 
-→ Referenz im Repo: [`demos/expert/daily-briefing`](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/expert/daily-briefing)
+<small>*[docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) · [docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills)*</small>
 
-<small>*Quellen: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) · [docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills)*</small>
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Expert: Schritt 2' -->
+
+<div class="phase-bar"></div>
+
+## Expert · Schritt 2 <span class="b5-colon">:</span> QA-Gate definieren
+
+**Dein Prompt:**
+
+> „Pack die QA-Regeln in `references/qa-gate.md`: 5 Bullets pflicht · jede mit Quelle + Datum · 8–25 Wörter · keine Hype-Wörter. Validator als `scripts/qa_check.py` (stdlib · Exit 0 oder 1)."
+
+**Im Hintergrund:**
+
+- Reference-Markdown schreibt die Regeln *menschlich lesbar* — Composer-Agent lädt sie als Kontext
+- Python-Script implementiert die Regeln *maschinell* — Exit-Code steuert die Pipeline
+
+→ Referenz: [`scripts/qa_check.py`](https://github.com/byte5ai/openclaw-hackathon-1/blob/main/demos/expert/daily-briefing/scripts/qa_check.py)
+
+<small>*[docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills) — references als lazy-loaded Kontext*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Expert: Schritt 3' -->
+
+<div class="phase-bar"></div>
+
+## Expert · Schritt 3 <span class="b5-colon">:</span> Pipeline live
+
+**Dein Prompt:**
+
+> „`/new`. Daily Briefing aus `https://hnrss.org/frontpage`."
+
+**Im Hintergrund:**
+
+1. `rss-zu-wochenbrief` läuft → 5-Bullet-Markdown
+2. `qa_check.py` läuft → `passed: true` *oder* JSON-Diagnose
+3. Bei pass: `non-annoying-news` rendert finales Issue · bei fail: Stopp + Report
+
+→ Diagramm: [`composition-diagram.md`](https://github.com/byte5ai/openclaw-hackathon-1/blob/main/demos/expert/daily-briefing/assets/composition-diagram.md)
+
+<small>*[docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills)*</small>
 
 ---
 
