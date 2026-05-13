@@ -91,5 +91,5 @@ sonst landet das Ergebnis als non-annoying-news Issue.
 
 - [x] `demos/README.md` finalisieren — verlinkt jede Demo, erklärt Lese-Reihenfolge
 - [x] Closing-Slide #20 ergänzen — Link auf `demos/`
-- [ ] Commit + Push, Pages-Deploy verifizieren
+- [x] Commit + Push, Pages-Deploy verifizieren *(Run 25786347920 success)*
 </content>
