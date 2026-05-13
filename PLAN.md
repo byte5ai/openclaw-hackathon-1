@@ -74,15 +74,16 @@ Skill B aufgerufen wird. Echtes Engineering, kein Spielzeug.
 
 **Dateien:**
 
-- [ ] `demos/expert/daily-briefing/SKILL.md` — Frontmatter, Composer-Workflow (rss-zu-wochenbrief → QA → non-annoying-news)
-- [ ] `demos/expert/daily-briefing/README.md` — Architektur + Anleitung
-- [ ] `demos/expert/daily-briefing/references/qa-gate.md` — Was prüft das Gate (Bullet-Anzahl, Pflichtfelder, Editorial-Standard-Check)
-- [ ] `demos/expert/daily-briefing/scripts/qa_check.py` — Validator zwischen den Skills
-- [ ] `demos/expert/daily-briefing/assets/composition-diagram.md` — Mermaid-Diagramm der Pipeline
+- [x] `demos/expert/daily-briefing/SKILL.md` — Frontmatter, Composer-Workflow (rss-zu-wochenbrief → QA → non-annoying-news)
+- [x] `demos/expert/daily-briefing/README.md` — Architektur + Anleitung
+- [x] `demos/expert/daily-briefing/references/qa-gate.md` — Was prüft das Gate (Bullet-Anzahl, Pflichtfelder, Editorial-Standard-Check)
+- [x] `demos/expert/daily-briefing/scripts/qa_check.py` — Validator zwischen den Skills *(stdlib, beide Pfade getestet)*
+- [x] `demos/expert/daily-briefing/assets/composition-diagram.md` — Mermaid-Diagramm der Pipeline
 
 **Definition of Done:** Agent bekommt eine RSS-URL, der Composer
 fährt die Pipeline durch, QA-Gate failed sauber bei kaputtem Input,
 sonst landet das Ergebnis als non-annoying-news Issue.
+*QA-Gate-Layer verifiziert (pass + fail Pfade); Composer-End-to-End wird Phase 0 zeigen.*
 
 ---
 
