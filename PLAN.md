@@ -13,8 +13,8 @@ Expert. Jeder gehäkelte Punkt = ein Commit.
 
 ## Setup
 
-- [ ] `demos/README.md` — Übersicht: was zeigt jede Demo, in welcher Reihenfolge ansehen
-- [ ] Verzeichnisse anlegen: `demos/entry/`, `demos/intermediate/`, `demos/expert/`
+- [ ] `demos/README.md` — Übersicht: was zeigt jede Demo, in welcher Reihenfolge ansehen *(am Ende, wenn alle drei stehen)*
+- [x] Verzeichnisse anlegen: `demos/entry/`, `demos/intermediate/`, `demos/expert/` *(implizit beim ersten File-Write)*
 
 ---
 
@@ -29,14 +29,15 @@ Output-Form, klares 1-zu-1-Mapping zwischen Input und Artefakt.
 
 **Dateien:**
 
-- [ ] `demos/intermediate/rss-zu-wochenbrief/SKILL.md` — Frontmatter (`name`, `description`), Workflow-Schritte, Trigger-Beispiele
-- [ ] `demos/intermediate/rss-zu-wochenbrief/README.md` — Was es tut, wie lokal testen
-- [ ] `demos/intermediate/rss-zu-wochenbrief/references/editorial-style.md` — Stil-Regeln: jede Bullet hat Was · Quelle · Datum
-- [ ] `demos/intermediate/rss-zu-wochenbrief/scripts/fetch_rss.py` — Python-Script: Feed pullen, Items als JSON ausgeben
-- [ ] `demos/intermediate/rss-zu-wochenbrief/assets/template.md` — Markdown-Template mit Platzhaltern
+- [x] `demos/intermediate/rss-zu-wochenbrief/SKILL.md` — Frontmatter (`name`, `description`), Workflow-Schritte, Trigger-Beispiele
+- [x] `demos/intermediate/rss-zu-wochenbrief/README.md` — Was es tut, wie lokal testen
+- [x] `demos/intermediate/rss-zu-wochenbrief/references/editorial-style.md` — Stil-Regeln: jede Bullet hat Was · Quelle · Datum
+- [x] `demos/intermediate/rss-zu-wochenbrief/scripts/fetch_rss.py` — Python-Script: Feed pullen, Items als JSON ausgeben *(stdlib-only, live gegen HN-RSS getestet)*
+- [x] `demos/intermediate/rss-zu-wochenbrief/assets/template.md` — Markdown-Template mit Platzhaltern
 
 **Definition of Done:** Agent kann mit einer RSS-URL gefüttert werden
 und gibt einen sauberen 5-Bullet-Brief im Stil des Templates zurück.
+*Script-Layer verifiziert; Agent-End-to-End wird Phase 0 zeigen.*
 
 ---
 
