@@ -13,7 +13,7 @@ Expert. Jeder gehäkelte Punkt = ein Commit.
 
 ## Setup
 
-- [ ] `demos/README.md` — Übersicht: was zeigt jede Demo, in welcher Reihenfolge ansehen *(am Ende, wenn alle drei stehen)*
+- [x] `demos/README.md` — Übersicht: was zeigt jede Demo, in welcher Reihenfolge ansehen
 - [x] Verzeichnisse anlegen: `demos/entry/`, `demos/intermediate/`, `demos/expert/` *(implizit beim ersten File-Write)*
 
 ---
@@ -89,7 +89,7 @@ sonst landet das Ergebnis als non-annoying-news Issue.
 
 ## Wenn alle drei stehen
 
-- [ ] `demos/README.md` finalisieren — verlinkt jede Demo, erklärt Lese-Reihenfolge
-- [ ] Closing-Slide #20 ergänzen — Link auf `demos/`
+- [x] `demos/README.md` finalisieren — verlinkt jede Demo, erklärt Lese-Reihenfolge
+- [x] Closing-Slide #20 ergänzen — Link auf `demos/`
 - [ ] Commit + Push, Pages-Deploy verifizieren
 </content>

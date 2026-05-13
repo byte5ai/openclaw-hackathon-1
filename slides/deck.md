@@ -333,7 +333,8 @@ Mindest-Pattern <span class="b5-colon">:</span> `SKILL.md` + 1 Reference-Doc + 1
 
 - **Slides** <span class="b5-colon">:</span> [byte5ai.github.io/openclaw-hackathon-1](https://byte5ai.github.io/openclaw-hackathon-1/) · [PDF](https://byte5ai.github.io/openclaw-hackathon-1/deck.pdf)
 - **Repo** <span class="b5-colon">:</span> [github.com/byte5ai/openclaw-hackathon-1](https://github.com/byte5ai/openclaw-hackathon-1)
-- **Demo-Skill** <span class="b5-colon">:</span> [github.com/iret77/non-annoying-news](https://github.com/iret77/non-annoying-news)
+- **Demo-Skills** <span class="b5-colon">:</span> [drei Levels im Repo](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos) · Entry · Intermediate · Expert
+- **Original-Demo** <span class="b5-colon">:</span> [github.com/iret77/non-annoying-news](https://github.com/iret77/non-annoying-news)
 - **byte5** <span class="b5-colon">:</span> [byte5.de](https://www.byte5.de)
 
 <span class="eyebrow">Du suchst Unterstützung bei deinem digitalen Projekt?</span>
