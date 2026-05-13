@@ -52,13 +52,13 @@ minimaler Zeit, ideal für Einstieg.
 
 **Dateien:**
 
-- [ ] `demos/entry/byte5-news-remix/README.md` — Wie man's in eigenes `non-annoying-news` reinläd
-- [ ] `demos/entry/byte5-news-remix/config.json` — Title, Topics, Sources, Cadence, Delivery — alles auf byte5-Tech-News
-- [ ] `demos/entry/byte5-news-remix/design-tokens.css` — byte5-Magenta, Days One, Density-Token
+- [x] `demos/entry/byte5-news-remix/README.md` — Wie man's in eigenes `non-annoying-news` reinläd
+- [x] `demos/entry/byte5-news-remix/config.json` — Title, Topics, Sources, Cadence, Delivery — alles auf byte5-Tech-News *(7 Top-Level-Keys, JSON-valid)*
+- [x] `demos/entry/byte5-news-remix/design-tokens.css` — byte5-Magenta, Days One, Density-Token *(reine Tokens, kein Selektor-Mapping)*
 
 **Definition of Done:** mit installiertem `non-annoying-news` kann ein
 Teilnehmer den Config-Pfad überschreiben und ein byte5-gefärbtes Issue
-rendern.
+rendern. *Config-Schema entspricht den im Skill-README dokumentierten Onboarding-Feldern.*
 
 ---
 
