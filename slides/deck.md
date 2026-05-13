@@ -510,6 +510,48 @@ daily-briefing/
 ---
 
 <!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Expert: Bonus für Claude-Desktop-Only' -->
+
+<div class="phase-bar"></div>
+
+## Same Pattern <span class="b5-colon">:</span> in Claude Desktop
+
+Composer ohne OpenClaw — andere Primitives, gleiche Idee:
+
+| OpenClaw | Claude Desktop |
+|---|---|
+| `SKILL.md` + Workflow | **Projekt** mit System-Prompt |
+| `references/qa-gate.md` | Attached Reference-File im Projekt |
+| `scripts/qa_check.py` | Claude evaluiert die Regeln *inline* |
+| Skill ruft Skill auf | Inline-Pipeline in einer Conversation |
+| `/new` zum Reloaden | Neuer Chat im Projekt |
+
+> **Was bleibt:** Composer-Pattern · Reference-driven Workflow · Editorial Standard.
+
+<small>*Claude Projects · System-Prompts + Reference-Files: [claude.ai](https://claude.ai)*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Expert: Walkthrough Claude-Desktop' -->
+
+<div class="phase-bar"></div>
+
+## Walkthrough <span class="b5-colon">:</span> Daily Briefing als Claude-Projekt
+
+1. **Projekt anlegen** „Daily Briefing" — System-Prompt beschreibt die 3-Step-Pipeline (Fetch → 5-Bullet → QA → Issue).
+2. **References anhängen** — `editorial-style.md` + `qa-rules.md` als Project-Files.
+3. **Triggern:**
+   > „Daily Briefing aus `https://huggingface.co/blog/feed.xml`"
+4. **Was Claude tut:** Web-Fetch · 5-Bullet-Draft · QA gegen Rules · finales Issue als Artifact.
+
+> **Iterieren statt Re-Implementieren** <span class="b5-colon">:</span> wenn das Artifact deinem Editorial-Standard nicht entspricht — „Mach den QA-Check nochmal strenger."
+
+<small>*Claude Projects · System-Prompts + Reference-Files: [claude.ai](https://claude.ai)*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
 <!-- _header: 'Phase 2 — Spielregeln' -->
 
 <div class="phase-bar"></div>
