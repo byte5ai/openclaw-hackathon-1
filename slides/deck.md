@@ -318,21 +318,16 @@ rss-zu-wochenbrief/
 
 **Via OpenClaw-Chat:**
 
-> „Bau mir einen Skill nach dem Muster aus `demos/intermediate/rss-zu-wochenbrief/`."
+> „Bau mir einen Skill nach `demos/intermediate/rss-zu-wochenbrief/`."
 
-Wenn der Skill installiert ist, einfach triggern (matcht `description` aus SKILL.md):
-
-> „Mach mir einen Wochenbrief aus https://hnrss.org/frontpage"
-
-**Via File-Edit im Workspace:**
+**Via File-Edit:**
 
 ```bash
-mkdir -p ~/.openclaw/workspace/skills/
 cp -R demos/intermediate/rss-zu-wochenbrief \
       ~/.openclaw/workspace/skills/
 ```
 
-Im Chat `/new` für frische Session — der Skill wird automatisch erkannt.
+Dann `/new` im Chat — Skill ist erkannt und triggert auf *„Wochenbrief aus &lt;URL&gt;"*.
 
 <small>*Quelle: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) — „Create your first skill" + Skills-Location-Tabelle*</small>
 
@@ -386,24 +381,20 @@ daily-briefing/
 
 ## So setzt du den Composer um
 
-**Voraussetzung:** `rss-zu-wochenbrief` ist installiert (Intermediate-Demo).
+**Voraussetzung:** `rss-zu-wochenbrief` installiert.
 
 **Via OpenClaw-Chat:**
 
 > „Bau mir den Composer aus `demos/expert/daily-briefing/`."
 
-Trigger nach Installation (matcht `description`):
-
-> „Daily Briefing aus https://hnrss.org/frontpage"
-
-**Via File-Edit im Workspace:**
+**Via File-Edit:**
 
 ```bash
 cp -R demos/expert/daily-briefing \
       ~/.openclaw/workspace/skills/
 ```
 
-Im Chat `/new` für frische Session — Composer wird erkannt.
+Dann `/new` im Chat — triggert auf *„Daily Briefing aus &lt;URL&gt;"*.
 
 <small>*Quellen: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) · [docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills) — Location-Präzedenz*</small>
 
