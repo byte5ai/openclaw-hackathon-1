@@ -246,6 +246,27 @@ byte5-news-remix/
 ---
 
 <!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Entry: Umsetzung' -->
+
+<div class="phase-bar"></div>
+
+## So setzt du den Remix um
+
+**Via OpenClaw-Chat:**
+
+> „Lies `demos/entry/byte5-news-remix/README.md` und führe die Schritte für meinen `non-annoying-news` aus."
+
+**Via File-Edit im Workspace:**
+
+Pfad für den Config-Override nennt dir `non-annoying-news` beim Onboarding. Beide Dateien dorthin kopieren, im Chat `/new` für frische Session.
+
+> Userspezifische Settings gehören *außerhalb* des Skill-Ordners — der `non-annoying-news`-SKILL.md fordert das explizit.
+
+<small>*Quellen: [non-annoying-news SKILL.md](https://github.com/iret77/non-annoying-news/blob/main/SKILL.md) · [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills)*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
 <!-- _header: 'Phase 2 — Intermediate' -->
 
 <div class="phase-bar"></div>
@@ -289,6 +310,35 @@ rss-zu-wochenbrief/
 ---
 
 <!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Intermediate: Umsetzung' -->
+
+<div class="phase-bar"></div>
+
+## So setzt du den Skill um
+
+**Via OpenClaw-Chat:**
+
+> „Bau mir einen Skill nach dem Muster aus `demos/intermediate/rss-zu-wochenbrief/`."
+
+Wenn der Skill installiert ist, einfach triggern (matcht `description` aus SKILL.md):
+
+> „Mach mir einen Wochenbrief aus https://hnrss.org/frontpage"
+
+**Via File-Edit im Workspace:**
+
+```bash
+mkdir -p ~/.openclaw/workspace/skills/
+cp -R demos/intermediate/rss-zu-wochenbrief \
+      ~/.openclaw/workspace/skills/
+```
+
+Im Chat `/new` für frische Session — der Skill wird automatisch erkannt.
+
+<small>*Quelle: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) — „Create your first skill" + Skills-Location-Tabelle*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
 <!-- _header: 'Phase 2 — Expert' -->
 
 <div class="phase-bar"></div>
@@ -326,6 +376,36 @@ daily-briefing/
 > `rss-zu-wochenbrief` + QA-Gate + `non-annoying-news`. **Pipeline-Pattern — andere Skills, anderes Gate, anderes Ergebnis.**
 
 <small>*[demos/expert/daily-briefing](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/expert/daily-briefing)*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Expert: Umsetzung' -->
+
+<div class="phase-bar"></div>
+
+## So setzt du den Composer um
+
+**Voraussetzung:** `rss-zu-wochenbrief` ist installiert (Intermediate-Demo).
+
+**Via OpenClaw-Chat:**
+
+> „Bau mir den Composer aus `demos/expert/daily-briefing/`."
+
+Trigger nach Installation (matcht `description`):
+
+> „Daily Briefing aus https://hnrss.org/frontpage"
+
+**Via File-Edit im Workspace:**
+
+```bash
+cp -R demos/expert/daily-briefing \
+      ~/.openclaw/workspace/skills/
+```
+
+Im Chat `/new` für frische Session — Composer wird erkannt.
+
+<small>*Quellen: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) · [docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills) — Location-Präzedenz*</small>
 
 ---
 
