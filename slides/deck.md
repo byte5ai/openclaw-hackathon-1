@@ -250,19 +250,21 @@ byte5-news-remix/
 
 <div class="phase-bar"></div>
 
-## So setzt du den Remix um
+## Von Zero zum personalisierten Issue
 
-**Via OpenClaw-Chat:**
+**Via OpenClaw-Chat — Personalization Gate:**
 
-> „Lies `demos/entry/byte5-news-remix/README.md` und führe die Schritte für meinen `non-annoying-news` aus."
+> „Starte das non-annoying-news-Onboarding. Topics: AI-Agents, OpenClaw, Web-Standards. Quelle: hnrss.org/frontpage. Cadence: wöchentlich. Design: byte5-Magenta, Days One."
 
-**Via File-Edit im Workspace:**
+Der Skill führt durch sein Onboarding, persistiert die Antworten lokal, rendert das erste Issue.
 
-Pfad für den Config-Override nennt dir `non-annoying-news` beim Onboarding. Beide Dateien dorthin kopieren, im Chat `/new` für frische Session.
+**Via Code-Eingaben:**
 
-> Userspezifische Settings gehören *außerhalb* des Skill-Ordners — der `non-annoying-news`-SKILL.md fordert das explizit.
+`references/onboarding.md` + `config-schema.md` von non-annoying-news lesen → `config.json` am vom Skill genannten Pfad hand-bauen → `onboarding.complete=true` → `/new`.
 
-<small>*Quellen: [non-annoying-news SKILL.md](https://github.com/iret77/non-annoying-news/blob/main/SKILL.md) · [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills)*</small>
+→ Referenz im Repo: [`demos/entry/byte5-news-remix`](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/entry/byte5-news-remix)
+
+<small>*Quelle: [non-annoying-news SKILL.md](https://github.com/iret77/non-annoying-news/blob/main/SKILL.md) — Personalization Gate + references*</small>
 
 ---
 
@@ -314,22 +316,21 @@ rss-zu-wochenbrief/
 
 <div class="phase-bar"></div>
 
-## So setzt du den Skill um
+## Von Zero zum eigenen Skill
 
 **Via OpenClaw-Chat:**
 
-> „Bau mir einen Skill nach `demos/intermediate/rss-zu-wochenbrief/`."
+> „Bau einen Skill `rss-zu-wochenbrief` in `~/.openclaw/workspace/skills/`. Pattern: `SKILL.md` mit Frontmatter + Workflow, 1 Reference (Editorial-Stil), 1 Python-Script (stdlib, parsed RSS/Atom), 1 Markdown-Template."
 
-**Via File-Edit:**
+Agent schreibt die vier Dateien direkt. `/new`, dann mit RSS-URL triggern.
 
-```bash
-cp -R demos/intermediate/rss-zu-wochenbrief \
-      ~/.openclaw/workspace/skills/
-```
+**Via Code-Eingaben:**
 
-Dann `/new` im Chat — Skill ist erkannt und triggert auf *„Wochenbrief aus &lt;URL&gt;"*.
+`mkdir -p ~/.openclaw/workspace/skills/rss-zu-wochenbrief/{references,scripts,assets}` → vier Dateien nach AgentSkills-Spec hand-schreiben → `/new`.
 
-<small>*Quelle: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) — „Create your first skill" + Skills-Location-Tabelle*</small>
+→ Referenz im Repo: [`demos/intermediate/rss-zu-wochenbrief`](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/intermediate/rss-zu-wochenbrief)
+
+<small>*Quellen: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) · [agentskills.io](https://agentskills.io)*</small>
 
 ---
 
@@ -379,24 +380,21 @@ daily-briefing/
 
 <div class="phase-bar"></div>
 
-## So setzt du den Composer um
+## Von Zero zum Composer
 
-**Voraussetzung:** `rss-zu-wochenbrief` installiert.
+**Voraussetzung:** `rss-zu-wochenbrief` schon im Workspace.
 
 **Via OpenClaw-Chat:**
 
-> „Bau mir den Composer aus `demos/expert/daily-briefing/`."
+> „Bau einen Composer `daily-briefing`. Pipeline: RSS-URL → rss-zu-wochenbrief → QA-Gate (Python) → non-annoying-news. Validator prüft 5 Bullets, Quellen vorhanden, 8–25 Wörter, keine Hype-Wörter."
 
-**Via File-Edit:**
+**Via Code-Eingaben:**
 
-```bash
-cp -R demos/expert/daily-briefing \
-      ~/.openclaw/workspace/skills/
-```
+Folder mit den 4 AgentSkill-Schichten anlegen → `SKILL.md` mit 3-Step-Workflow → `scripts/qa_check.py` mit Bullet-/Quellen-/Hype-Checks → `/new`.
 
-Dann `/new` im Chat — triggert auf *„Daily Briefing aus &lt;URL&gt;"*.
+→ Referenz im Repo: [`demos/expert/daily-briefing`](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/expert/daily-briefing)
 
-<small>*Quellen: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) · [docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills) — Location-Präzedenz*</small>
+<small>*Quellen: [docs.openclaw.ai/tools/creating-skills](https://docs.openclaw.ai/tools/creating-skills) · [docs.openclaw.ai/tools/skills](https://docs.openclaw.ai/tools/skills)*</small>
 
 ---
 
