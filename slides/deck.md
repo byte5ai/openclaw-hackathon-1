@@ -533,21 +533,71 @@ Composer ohne OpenClaw — andere Primitives, gleiche Idee:
 ---
 
 <!-- _class: phase phase-3 -->
-<!-- _header: 'Phase 2 — Expert: Walkthrough Claude-Desktop' -->
+<!-- _header: 'Phase 2 — Claude-Desktop: Schritt 1' -->
 
 <div class="phase-bar"></div>
 
-## Walkthrough <span class="b5-colon">:</span> Daily Briefing als Claude-Projekt
+## Claude Desktop · Schritt 1 <span class="b5-colon">:</span> System-Prompt per Meta-Prompt
 
-1. **Projekt anlegen** „Daily Briefing" — System-Prompt beschreibt die 3-Step-Pipeline (Fetch → 5-Bullet → QA → Issue).
-2. **References anhängen** — `editorial-style.md` + `qa-rules.md` als Project-Files.
-3. **Triggern:**
-   > „Daily Briefing aus `https://huggingface.co/blog/feed.xml`"
-4. **Was Claude tut:** Web-Fetch · 5-Bullet-Draft · QA gegen Rules · finales Issue als Artifact.
+**Dein Prompt (in einem leeren Claude-Chat):**
 
-> **Iterieren statt Re-Implementieren** <span class="b5-colon">:</span> wenn das Artifact deinem Editorial-Standard nicht entspricht — „Mach den QA-Check nochmal strenger."
+> „Schreib mir einen Claude-Projekt-System-Prompt für einen Daily-Briefing-Workflow. Pipeline: RSS-URL → 5-Bullet-Markdown → QA gegen Editorial-Standards → finales Issue. Strukturiere ihn als nummerierte Schritte mit Fehler-Handling."
 
-<small>*Claude Projects · System-Prompts + Reference-Files: [claude.ai](https://claude.ai)*</small>
+**Im Hintergrund:**
+
+- Claude schreibt einen vollständigen System-Prompt als Artifact
+- Inkludiert: Zweck · Eingabe-Format · Workflow 1–3 · Output-Format · Fehler-Handling
+- Du kopierst den Artifact-Inhalt ins Projekt unter *Settings → Custom Instructions*
+
+<small>*Claude Projects · System-Prompts: [claude.ai](https://claude.ai)*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Claude-Desktop: Schritt 2' -->
+
+<div class="phase-bar"></div>
+
+## Claude Desktop · Schritt 2 <span class="b5-colon">:</span> References per Meta-Prompt
+
+**Dein Prompt:**
+
+> „Generiere zwei Reference-Files für mein Daily-Briefing-Projekt:
+> 1. `editorial-style.md` — Was · Quelle · Datum · 8–25 Wörter · keine Hype-Wörter
+> 2. `qa-rules.md` — 5 Bullets pflicht · Hype-Wort-Blacklist · Quellen-Pflicht"
+
+**Im Hintergrund:**
+
+- Claude schreibt **beide Files** als separate Artifacts mit präziser Markdown-Struktur
+- Du speicherst sie lokal und lädst sie im Projekt unter *Knowledge* hoch
+- Damit sind beide Reference-Files für jede neue Project-Conversation verfügbar
+
+<small>*Claude Projects · Project Knowledge: [claude.ai](https://claude.ai)*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Claude-Desktop: Schritt 3' -->
+
+<div class="phase-bar"></div>
+
+## Claude Desktop · Schritt 3 <span class="b5-colon">:</span> Triggern + Iterieren
+
+**Dein Prompt (neuer Chat im Projekt):**
+
+> „Daily Briefing aus `https://huggingface.co/blog/feed.xml`"
+
+**Im Hintergrund:**
+
+- Claude liest System-Prompt + beide Reference-Files automatisch
+- Web-Fetch des Feeds → 5-Bullet-Draft → QA gegen Rules → Issue als Artifact
+- Bei QA-Fail: Claude meldet die Verstöße und schlägt Rewrites vor
+
+**Iterations-Prompt** (wenn du nachschärfen willst):
+
+> „Bullet 3 hat ein Hype-Wort, Bullet 5 ist zu lang. Rewrite beide gegen die `qa-rules.md`."
+
+<small>*Claude Projects · Artifacts + Web-Fetch: [claude.ai](https://claude.ai)*</small>
 
 ---
 
