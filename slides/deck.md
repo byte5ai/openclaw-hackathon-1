@@ -386,7 +386,7 @@ rss-zu-wochenbrief/
 
 **Dein Prompt:**
 
-> „`assets/template.md` mit Platzhaltern für 5 Bullets + Header. Dann `/new`. Wochenbrief aus `https://hnrss.org/frontpage`."
+> „`assets/template.md` mit Platzhaltern für 5 Bullets + Header. Dann `/new`. Wochenbrief aus `https://huggingface.co/blog/feed.xml`."
 
 **Im Hintergrund:**
 
@@ -495,7 +495,7 @@ daily-briefing/
 
 **Dein Prompt:**
 
-> „`/new`. Daily Briefing aus `https://hnrss.org/frontpage`."
+> „`/new`. Daily Briefing aus `https://huggingface.co/blog/feed.xml`."
 
 **Im Hintergrund:**
 
