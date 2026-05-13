@@ -226,6 +226,26 @@ Skills landen je nach Scope in `<workspace>/skills`, `~/.agents/skills` oder `~/
 ---
 
 <!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Entry: Demo-Vorlage im Repo' -->
+
+<div class="phase-bar"></div>
+
+## `demos/entry/byte5-news-remix/`
+
+```
+byte5-news-remix/
+├── README.md           # Anwendungs-Anleitung
+├── config.json         # Topics, Quellen, Cadence — onboarding.complete=true
+└── design-tokens.css   # byte5-Magenta, Cyan, Days One, Density
+```
+
+> Config-Overlay für `non-annoying-news`. **Klonen · `config.json` auf deine Topics umbiegen · Tokens auf deine Farben.**
+
+<small>*[demos/entry/byte5-news-remix](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/entry/byte5-news-remix)*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
 <!-- _header: 'Phase 2 — Intermediate' -->
 
 <div class="phase-bar"></div>
@@ -247,6 +267,28 @@ Mindest-Pattern <span class="b5-colon">:</span> `SKILL.md` + 1 Reference-Doc + 1
 ---
 
 <!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Intermediate: Demo-Vorlage im Repo' -->
+
+<div class="phase-bar"></div>
+
+## `demos/intermediate/rss-zu-wochenbrief/`
+
+```
+rss-zu-wochenbrief/
+├── SKILL.md                            # Manifest + Workflow
+├── README.md
+├── references/editorial-style.md       # Stil-Regeln pro Bullet
+├── scripts/fetch_rss.py                # RSS/Atom-Parser (stdlib-only)
+└── assets/template.md                  # Markdown-Output-Template
+```
+
+> RSS-URL → 5-Bullet-Markdown. **Kopier-Vorlage für deine eigene 1-Input/1-Artefakt-Idee** — Script + Template tauschen, Pattern bleibt.
+
+<small>*[demos/intermediate/rss-zu-wochenbrief](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/intermediate/rss-zu-wochenbrief)*</small>
+
+---
+
+<!-- _class: phase phase-3 -->
 <!-- _header: 'Phase 2 — Expert' -->
 
 <div class="phase-bar"></div>
@@ -262,6 +304,28 @@ Mindest-Pattern <span class="b5-colon">:</span> `SKILL.md` + 1 Reference-Doc + 1
 **Open Slot** — eigenes Expert-Vorhaben? Geh es an, wir reviewen mit.
 
 > **Erfolg** <span class="b5-colon">:</span> ein Pattern, das jemand anderes übernehmen kann.
+
+---
+
+<!-- _class: phase phase-3 -->
+<!-- _header: 'Phase 2 — Expert: Demo-Vorlage im Repo' -->
+
+<div class="phase-bar"></div>
+
+## `demos/expert/daily-briefing/`
+
+```
+daily-briefing/
+├── SKILL.md                                # Composer-Workflow (3 Steps)
+├── README.md
+├── references/qa-gate.md                   # QA-Regeln + Output-Schema
+├── scripts/qa_check.py                     # Validator (pass→weiter, fail→Stopp)
+└── assets/composition-diagram.md           # Mermaid: Pipeline
+```
+
+> `rss-zu-wochenbrief` + QA-Gate + `non-annoying-news`. **Pipeline-Pattern — andere Skills, anderes Gate, anderes Ergebnis.**
+
+<small>*[demos/expert/daily-briefing](https://github.com/byte5ai/openclaw-hackathon-1/tree/main/demos/expert/daily-briefing)*</small>
 
 ---
 
